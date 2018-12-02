@@ -1,0 +1,24 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "My solutions to the advent of code 2018 (https://adventofcode.com/2018)",
+  "scripts": {
+    "compile": "node node_modules/typescript/bin/tsc",
+    "watch": "node node_modules/tsc-watch/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blalasaadri/advent-of-code-2018.git"
+  },
+  "author": "Alasdair Collinson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blalasaadri/advent-of-code-2018/issues"
+  },
+  "homepage": "https://github.com/blalasaadri/advent-of-code-2018#readme",
+  "devDependencies": {
+    "tsc-watch": "^1.0.31",
+    "typescript": "^3.2.1"
+  }
+}
