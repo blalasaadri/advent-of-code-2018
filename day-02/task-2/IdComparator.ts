@@ -9,19 +9,19 @@ class IdComparator {
     }
 
     private findSimilarEntries(entries : string[]) : string[][] {
-        let similarEntries : string[][] = [];
+        let similarEntries = new Set<string[]>();;
         
         for (let i = 0; i < entries[0].length; i++) {
             let sorted = entries.sort((first, second) => [... first][i] > [... second][i] ? 1 : -1);
             for (let j = 0; j < sorted.length - 1; j++) {
                 const distance = levenshtein.get(sorted[j], sorted[j + 1]);
                 if (distance == 1) {
-                    similarEntries.push([sorted[j], sorted[j + 1]]);
+                    similarEntries.add([sorted[j], sorted[j + 1]]);
                 }
             }
         }
 
-        return similarEntries;
+        return [... similarEntries.values()];
     }
 
     public solve() : string[][] {
@@ -32,11 +32,12 @@ class IdComparator {
             const secondArray = [... second];
             let result : string[] = [];
             for (let i = 0; i < firstArray.length; i++) {
-                if (firstArray[i] == secondArray[i]) {
-                    result.push(firstArray[i]);
-                } else {
-                    console.log(`Difference found in position ${i}: ${firstArray[i]} vs. ${secondArray[i]}`);
-                }
+                const character = firstArray[i];
+                if (character == secondArray[i]) {
+                    result.push(character);
+                } /*else {
+                    console.log(`Difference between '${first}' and '${second}' found in position ${i}: ${firstArray[i]} vs. ${secondArray[i]}`);
+                }*/
             }
             return result;
         });
@@ -44,4 +45,4 @@ class IdComparator {
 }
 
 let idComparator = new IdComparator();
-console.log(`Solution: ${idComparator.solve()[0].join('')}`);
+console.log(`Solutions: \n\t${idComparator.solve().map(solution => solution.join('')).join('\n\t')}`);
