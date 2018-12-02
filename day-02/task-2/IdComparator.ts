@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import levenshtein from 'js-levenshtein';
+import levenshtein from 'fast-levenshtein';
 
 class IdComparator {
     private readInput() : string[] {
@@ -14,7 +14,7 @@ class IdComparator {
         for (let i = 0; i < entries[0].length; i++) {
             let sorted = entries.sort((first, second) => [... first][i] > [... second][i] ? 1 : -1);
             for (let j = 0; j < sorted.length - 1; j++) {
-                const distance = levenshtein(sorted[j], sorted[j + 1]);
+                const distance = levenshtein.get(sorted[j], sorted[j + 1]);
                 if (distance == 1) {
                     similarEntries.push([sorted[j], sorted[j + 1]]);
                 }

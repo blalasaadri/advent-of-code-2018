@@ -23,6 +23,7 @@
     "typescript": "^3.2.1"
   },
   "dependencies": {
-    "js-levenshtein": "^1.1.4"
+    "@types/fast-levenshtein": "0.0.1",
+    "fast-levenshtein": "^2.0.6"
   }
 }
