@@ -3,7 +3,7 @@ import { readFileSync } from 'fs';
 class FrequencySolver {
 
     private readInput(): number[] {
-        return readFileSync('./day-01/task-1/input.txt', 'utf-8')
+        return readFileSync('./day-01/input.txt', 'utf-8')
             .split('\n')
             .filter(Boolean)
             .map(num => parseInt(num));
