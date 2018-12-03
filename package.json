@@ -19,11 +19,13 @@
   "homepage": "https://github.com/blalasaadri/advent-of-code-2018#readme",
   "devDependencies": {
     "@types/node": "^10.12.11",
+    "@types/underscore": "^1.8.9",
     "tsc-watch": "^1.0.31",
     "typescript": "^3.2.1"
   },
   "dependencies": {
     "@types/fast-levenshtein": "0.0.1",
-    "fast-levenshtein": "^2.0.6"
+    "fast-levenshtein": "^2.0.6",
+    "underscore": "^1.9.1"
   }
 }
