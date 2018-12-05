@@ -29,7 +29,7 @@ class LogLine {
     }
 }
 
-let input = readFileSync('./day-04/testInput.txt', 'utf-8')
+let input = readFileSync('./day-04/input.txt', 'utf-8')
     .split('\n')
     .filter(Boolean)
     .map(line => {
